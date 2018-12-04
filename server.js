@@ -2,6 +2,8 @@ const express  = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
 
+const Hport = process.env.PORT || 3000
+
 var app = express()
 
 hbs.registerPartials(__dirname + '/views/partials')
@@ -36,8 +38,8 @@ app.get('/bad', (req,res)=>{
   res.send('bad bad boy')
 })
 
-app.listen(3000, () => {
-  console.log('server is up on #3000')
+app.listen(Hport, () => {
+  console.log(`server is up on #${Hport}`)
 })
 
 console.log('exiting server.js')
